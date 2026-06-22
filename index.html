@@ -5,35 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Bookshop</title>
     <style>
+        :root {
+            color-scheme: light;
+            font-family: "Inter", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f7f8fb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
         }
-        
-    nav{
-    background-color: rgb(219, 219, 219);
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 1px 12px rgba(15, 23, 42, 0.08);
+            padding: 0.9rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
         }
-        
-        nav ul li {
-            margin-right: 20px;
-            display: block;
-        }
-        
-        nav ul li a {
+
+        nav a {
             text-decoration: none;
-            color: black;
+            color: #334155;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #6366f1;
+        }
+
+        header {
+            padding: 1rem 1.5rem 0;
+        }
+
+        .hero-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+        }
+
+        main {
+            padding: 2rem 1.5rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .book-highlight {
+            display: grid;
+            grid-template-columns: minmax(280px, 360px) 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .book-highlight img {
+            border-radius: 20px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .book-highlight h1 {
+            margin: 0 0 0.75rem;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            letter-spacing: -0.03em;
+            color: #111827;
+        }
+
+        .book-highlight h3 {
+            margin: 0 0 1.2rem;
+            font-size: 1rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .book-highlight h3 a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .book-highlight h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .book-highlight p {
+            margin: 0;
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 800px) {
+            .book-highlight {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -46,12 +153,63 @@
         </ul>
     </nav>
     <header>
-        <div>
+        <div class="hero-image">
             <img src="assets/imgs/Back-in-stock-titles-test-1400x376.webp" alt="header image">
         </div>
     </header>
-    <section>
-        
-    </section>
+    <main>
+        <section class="book-highlight">
+            <div>
+                <img src="assets/imgs/atomic-habits-dots.png" alt="Atomic Habits book cover">
+            </div>
+            <div>
+                <h1>Atomic Habits</h1>
+                <h3>By <a href="#">James Clear</a></h3>
+                <p>The official companion to the #1 worldwide bestseller is the next step in your habits toolkit. 
+                    Guided journal prompts will help you engage with your habits and the forces that impact them. 
+                    Thought-provoking exercises allow you to implement the Atomic Habits theories and see your life transform. 
+                    This workbook takes the reader from understanding habits to living them. 
+                    James Clear’s system helps good habits emerge naturally while unwanted habits fade away.</p>
+            </div>
+        </section>
+        <section class="book_catalog">
+            <div class="container">
+                <div class="card">
+                    <h1 class="img-header">The Secret</h1>
+                    <div>
+                        <img src="assets/imgs/The-Secret.jpg" alt="The Secret">
+                        <h4>By <a>Rhonda Byrne</a></h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            This book centers around the Law of Attraction, which posits that like attracts like and that our thoughts 
+                            and feelings shape our experiences. It outlines a creative process involving asking, believing, and receiving,
+                            along with practices like visualization and gratitude to manifest desires in various life areas.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h1 class="img-header">The 7 Habits of Highly Effective People</h1>
+                    <div>
+                        <img src="assets/imgs/atomic-habits-dots.png" alt="atomic habits">
+                        <h4>By <a>By Stephen R. Covey</a></h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            It is rightly said that habits make or break a man. If you want to know why you are not doing something right, 
+                            sometimes all you need is to perform an analysis of your habits and consider altering them. 
+                            Because sometimes it’s not about what you do, but more about how you do it! And that’s where your habits play a 
+                            very important role.
+
+                        ‘The 7 habits of Highly Effective People’ is a book that aims at providing its readers with the importance of character
+                        ethics and personality ethics. The author talks about the values of integrity, courage, a sense of justice and most 
+                         importantly, honesty. The book is a discussion about the seven most essential habits that every individual must adopt to
+                          in order to live a life which is more fulfilling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
